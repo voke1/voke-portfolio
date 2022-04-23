@@ -26,8 +26,9 @@ if (navClose) {
 
 /*==================== REMOVE MENU MOBILE ====================*/
 
-const navLink = document.querySelectorAl1(".nav__link");
+const navLink = document.querySelectorAll(".nav__link");
 function linkAction() {
+  console.log("NAV CLICKED")
   const navMenu = document.getElementById("nav-menu");
   // When we click on each nay__link, we remove the show-menu class
   navMenu.classList.remove("show-menu");
@@ -88,7 +89,7 @@ modalCloses.forEach((modalClose) => {
       modalView.classList.remove("active-modal");
     });
   });
-});
+}); 
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper(".portfolio__container", {
@@ -134,12 +135,9 @@ function scrollActive() {
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
+        .querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link");
     } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
+      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link");
     }
   });
 }
@@ -150,9 +148,9 @@ function scrollHeader() {
   const nav = document.getElementById("header");
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header
   if (this.scrollY >= 80) {
-    nav.classList.add("scrolL-header");
+    nav.classList.add("scroll-header");
   } else {
-    nav.classlist.remove("scroll-header");
+    nav.classList.remove("scroll-header");
   }
 }
 window.addEventListener("scroll", scrollHeader);
