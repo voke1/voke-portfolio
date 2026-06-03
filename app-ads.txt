@@ -1,5 +1,5 @@
-google.com, pub-5805918760749196, DIRECT, f08c47fec0942fa0
 google.com, pub-2508993905691861, DIRECT, f08c47fec0942fa0
+google.com, pub-5805918760749196, DIRECT, f08c47fec0942fa0
 triplelift.com, 13042, RESELLER
 xandr.com, 13799, RESELLER
 adyoulike.com, aff404dd1a704f379acae5190701c9c2, RESELLER
