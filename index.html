@@ -4,1059 +4,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AppEdge builds premium mobile apps and AI-powered products for founders, startups, and African businesses.">
+    <meta name="theme-color" content="#14101f">
+    <meta property="og:title" content="AppEdge | Mobile App Development & AI Products">
+    <meta property="og:description"
+        content="A Lagos-based product studio building mobile apps and AI assistants for African markets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appedgeng.com/">
+    <meta property="og:image" content="https://appedgeng.com/assets/img/appedge_logo.png">
 
-    <!--==================== UNICONS ====================-->
-
-
-
-
-
+    <link rel="icon" href="assets/img/appedge_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
-
-
-    <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css">
+
     <title>AppEdge | Mobile App Development & AI Products</title>
 </head>
 
 <body>
-    <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">
-                <img src="assets/img/appedge_logo.png" alt=""
-                    style="width: 25px; height: 25px; object-fit: contain; margin-right: .5rem; vertical-align: middle; border-radius: 4px;">
-                AppEdge
+        <nav class="nav container" aria-label="Primary navigation">
+            <a href="#home" class="nav__logo" aria-label="AppEdge home">
+                <span class="brand-mark" aria-hidden="true">A</span>
+                <span>AppEdge</span>
             </a>
+
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+                <i class="uil uil-apps"></i>
+            </button>
+
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="uil uil-estate nav__icon"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> About
-                        </a>
-                    </li>
-                    <!-- <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="uil uil-file-alt nav__icon"></i> Skills
-                        </a>
-                    </li> -->
-                    <!-- <li class="nav__item">
-                        <a href="#services" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon"></i> Service
-                        </a>
-                    </li> -->
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i> Projects
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="uil uil-message nav__icon"></i> Contact Us
-                        </a>
-                    </li>
+                <button class="nav__close" id="nav-close" type="button" aria-label="Close menu">
+                    <i class="uil uil-times"></i>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="#services" class="nav__link">Services</a></li>
+                    <li><a href="#portfolio" class="nav__link">Projects</a></li>
+                    <li><a href="#contact" class="nav__link nav__link--cta">Contact Us</a></li>
                 </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
-            <!-- Theme color change button -->
-            <!-- <div class="nav__btns"> -->
-            <!-- Theme change button -->
-            <!-- <i class="uil uil-moon change__theme" id="theme-button"></i> -->
-
-
-            <!-- <div class="nav__toggle" id="nav-toggle"> <i class="uil uil-apps"></i></div> -->
-            <!-- </div> -->
         </nav>
     </header>
 
-
-    <!--==================== MAIN ====================-->
     <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/company/appedge-tech/" target="_blank"
-                            class="home__social-icon">
-                            <i class="uil uil-linkedin-alt"></i>
-                        </a>
-                        <a href="https://twitter.com/voke2sure" target="_blank" class="home__social-icon">
-                            <i class="uil uil-twitter-alt"></i>
+        <section class="home section" id="home" aria-labelledby="home-title">
+            <div class="home__overlay"></div>
+            <div class="home__container container">
+                <h1 class="home__title" id="home-title">AppEdge</h1>
+                <p class="home__subtitle">Premium mobile apps and AI assistants for businesses ready to move faster.
+                </p>
+                <p class="home__description">
+                    We help founders and teams design, build, launch, and improve reliable digital products for African
+                    markets, from customer-facing mobile apps to AI-powered commerce tools like Sabi.
+                </p>
 
-                        </a>
-                        <a href="https://github.com/voke1" target="_blank" class="home__social-icon">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-                    </div>
-
-                    <div class="home__img">
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path fill="#FFF" d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image class="home__blob-img" x="15" y="0" width="170" height="187"
-                                    preserveAspectRatio="xMidYMid meet" xlink:href="assets/img/appedge_logo.png" />
-                            </g>
-                        </svg>
-
-
-                    </div>
-                    <div class="home__data">
-                        <h1 class="home__title">AppEdge</h1>
-                        <h3 class="home__subtitle">Building mobile and AI-powered products for African markets.</h3>
-                        <p class="home__description">Expertise in React Native, cross-platform we wield.
-                            Turning your visions into apps that yield. Let’s create something exceptional and bold.
-                            We make high-quality solutions, with stories to be told!</p>
-                        <a href="#contact" class="button button--flex">
-                            Contact Us <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-
-
-
-                </div>
-                <div class="home__scroll">
-                    <a href="#about" class="home__scroll-button button--flex">
-                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Scroll down</span>
-                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                <div class="home__actions" aria-label="Primary actions">
+                    <a href="#contact" class="button button--flex">
+                        Start a project <i class="uil uil-message button__icon"></i>
+                    </a>
+                    <a href="#portfolio" class="button button--ghost button--flex">
+                        View work <i class="uil uil-arrow-down button__icon"></i>
                     </a>
                 </div>
 
-
-
-
+                <dl class="home__proof" aria-label="Company highlights">
+                    <div>
+                        <dt>10+</dt>
+                        <dd>Years building</dd>
+                    </div>
+                    <div>
+                        <dt>6+</dt>
+                        <dd>Products shipped</dd>
+                    </div>
+                    <div>
+                        <dt>AI + Mobile</dt>
+                        <dd>Product focus</dd>
+                    </div>
+                </dl>
             </div>
         </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title">About AppEdge</h2>
-            <span class="section__subtitle">Company Profile</span>
+        <section class="about section" id="about" aria-labelledby="about-title">
+            <div class="section__heading container">
+                <p class="eyebrow">About AppEdge</p>
+                <h2 class="section__title" id="about-title">A focused team building products that can survive the
+                    real market.</h2>
+                <p class="section__subtitle">
+                    We blend practical engineering, product thinking, and local market understanding to ship tools that
+                    customers can trust.
+                </p>
+            </div>
+
             <div class="about__container container grid">
-                <img src="assets/img/appedge_logo.png" alt="" class="about__img"
-                    style="object-fit: contain; padding: 1rem; background-color: #fff; border-radius: .75rem;">
+                <div class="about__visual" aria-label="AppEdge product focus">
+                    <img src="assets/img/appedge_logo.png" alt="AppEdge logo" class="about__logo">
+                    <div class="about__product">
+                        <img src="assets/img/sabi_logo.png" alt="Sabi AI assistant logo">
+                        <div>
+                            <span>Current product</span>
+                            <strong>Sabi</strong>
+                            <p>Live AI WhatsApp support for Nigerian SMBs.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="about__data">
-                    <p class="about__description">AppEdge is a software development company building mobile and
-                        AI-powered products for African markets. Current product: Sabi — an AI WhatsApp assistant for
-                        Nigerian SMBs.</p>
-                    <div class="about__info">
+                    <p>
+                        AppEdge is a software development company creating mobile and AI-powered products for African
+                        markets. Our work is shaped around speed, usability, support, and the realities of distribution
+                        across Android, WhatsApp, and mobile-first customer journeys.
+                    </p>
+                    <p>
+                        We partner with founders, business owners, and product teams who need more than a code vendor:
+                        they need a practical product partner that can turn an idea into a polished launch.
+                    </p>
+
+                    <div class="about__values">
                         <div>
-                            <span class="about__info-title">07+</span>
-                            <span class="about__info-name">Years <br> experience</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">5+</span>
-                            <span class="about__info-name">Completed <br> project</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">04+</span>
-                            <span class="about__info-name">Companies <br> worked</span>
-
-                        </div>
-                    </div>
-                    <div class="about__buttons">
-                    </div>
-
-
-                </div>
-
-        </section>
-
-
-
-
-
-
-        <!--==================== SKILLS ====================-->
-        <!-- <section class="skills section" id="skills"> -->
-        <!-- <h2 class="section__title">Skills</h2>
-                    <span class="section__subtitle">My technical level</span>
-                    <div class="skills__container container grid">
-
-                        <div> -->
-        <!--============= SKILLS 1======-->
-        <!-- <div class="skills__content skills__open">
-                   <div class="skills__header">
-                        <i class="uil uil-brackets-curly skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Frontend development</h1>
-                        <span class="skills__subtitle">More than 4 years</span>
-                    </div>
-                    <i class="uil uil-angle-down skills__arrow"></i>
-                </div>
-
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                    <div class="skills__title">
-                        <h3 class="skills__name">HTML, CSS & Javascript</h3>
-                        <span class="skills__number">90%</span>
-                    </div>
-                    <div class="skills__bar">
-                        <span class="skills__percentage skills__html"></span>
-                    </div>
-                </div>
-
-            <div class="skills__data">
-                <div class="skills__title">
-                    <h3 class="skills__name">React Native</h3>
-                    <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                    <span class="skills__percentage skills__js"></span>
-                </div>
-            </div>
-
-            <div class="skills__data">
-                <div class="skills__title">
-                    <h3 class="skills__name">Redux</h3>
-                    <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                    <span class="skills__percentage skills__css"></span>
-                </div>
-            </div>
-                </div>
-
-
-            </div> -->
-
-
-        <!--============= SKILLS 2======-->
-        <!-- <div class="skills__content skills__close">
-                <div class="skills__header">
-                    <i class="uil uil-server-network skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Backend development</h1>
-                        <span class="skills__subtitle">More than 3 years</span>
-                    </div>
-                    <i class="uil uil-angle-down skills__arrow"></i>
-                </div>
-            
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">Node JS</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__php"></span>
-                        </div>
-                    </div>
-            
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">Mongo DB</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__node"></span>
-                        </div>
-                    </div> -->
-
-        <!-- Firebase skills -->
-        <!-- <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">Firebase</h3>
-                            <span class="skills__number">60%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__firebase"></span>
-                        </div>
-                    </div> -->
-        <!-- </div>
-            
-            
-            </div>
-        </div>
-
-        <div> -->
-
-        <!--============= SKILLS 3 ======-->
-        <!-- <div class="skills__content skills__close">
-                <div class="skills__header">
-                    <i class="uil uil-swatchbook skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Cloud development</h1>
-                        <span class="skills__subtitle">More than 2 years</span>
-                    </div>
-                    <i class="uil uil-angle-down skills__arrow"></i>
-                </div>
-            
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">AWS Compute, Storage, Database</h3>
-                            <span class="skills__number">70%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__figma"></span>
-                        </div>
-                    </div>
-            
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">AWS Amplify</h3>
-                            <span class="skills__number">70%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__sketch"></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">AWS Codebuild, Codecommit, CodeStar</h3>
-                            <span class="skills__number">70%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__sketch"></span>
-                        </div>
-                    </div>
-            
-                    <div class="skills__data">
-                        <div class="skills__title">
-                            <h3 class="skills__name">Heroku</h3>
-                            <span class="skills__number">70%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__photoshop"></span>
-                        </div>
-                    </div>
-                </div>
-            
-            
-            </div>
-        </div>
-
-
-
-            </div>
-    </section> -->
-
-        <!--==================== QUALIFICATION ====================-->
-        <!-- <section class="qualification section">
-            <h2 class="section__title">Qualification</h2>
-            <span class="section__subtitle">My personal journey</span>
-            <div class="qualification__container container">
-                <div class="qualification__tabs">
-                    <div class="qualification__button button--flex " data-target="#education">
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Education
-                    </div>
-                    <div class="qualification__button button--flex qualification__active" data-target="#work">
-                        <i class="uil uil-briefcase-alt qualification__icon"></i>
-                        Work
-                    </div>
-                </div>
-
-                <div class="qualification__sections"> -->
-        <!--========= QUALIFICATION CONTENT 1 ====-->
-        <!-- <div class="qualification__content qualification__active" data-content id="work"> -->
-        <!--============QUALIFICATION 1======-->
-
-        <!-- <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">AWS Cloud Engineer</h3>
-                                <span class="qualification__subtitle">21st Century Technologies</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2016 - 2019
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                    </div> -->
-
-        <!--============QUALIFICATION 2======-->
-
-
-        <!-- <div class="qualification__data">
-                            <div>
-                            
-                            </div>
-                            
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__title">FullStack Engineer</h3>
-                                <span class="qualification__subtitle">Andela</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2018 - 2019
-                                </div>
-                            </div>
-                            
-                            
-                        </div> -->
-
-
-        <!--============QUALIFICATION 3======-->
-
-        <!-- <div class="qualification__data">
-                        <div>
-                            <h3 class="qualification__title">FullStack Developer (React Native)</h3>
-                            <span class="qualification__subtitle">IT Horizons</span>
-                            <div class="qualification__calendar">
-                                <i class="uil uil-calendar-alt"></i>
-                                2019 - 2020
-                            </div>
+                            <i class="uil uil-bolt-alt"></i>
+                            <span>Fast MVP cycles</span>
                         </div>
                         <div>
-                            <span class="qualification__rounder"></span>
-                            <span class="qualification__line"></span>
+                            <i class="uil uil-shield-check"></i>
+                            <span>Reliable app foundations</span>
                         </div>
-                
-                    </div> -->
-
-        <!--============QUALIFICATION 4======-->
-
-        <!-- <div class="qualification__data">
-                        <div></div>
-
                         <div>
-                            <span class="qualification__rounder"></span> -->
-        <!-- <span class="qualification_line"></span> -->
-        <!-- </div>
-
-                        <div>
-                            <h3 class="qualification__title">Head, Engineering</h3>
-                            <span class="qualification__subtitle">Coinnest Africa</span>
-                            <div class="qualification__calendar">
-                                <i class="uil uil-calendar-alt"></i>
-                                2020 - 2021
-                            </div>
+                            <i class="uil uil-chart-growth"></i>
+                            <span>Launch-ready product thinking</span>
                         </div>
-                       
                     </div>
-                </div> -->
-
-
-
-
-        <!--========= QUALIFICATION CONTENT 2 ====-->
-        <!-- <div class="qualification__content" data-content id="education"> -->
-        <!--============QUALIFICATION 1======-->
-
-        <!-- <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">BSc</h3>
-                                <h3 class="qualification__title">First Class Honours</h3>
-                                <span class="qualification__subtitle">Lagos - Lagos State University</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2010 - 2015
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                    
-                        </div> -->
-
-        <!--============QUALIFICATION 2======-->
-
-
-
-        <!-- <div class="qualification__data">
-                            <div></div>
-                            
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__title">AWS Cloud Computing</h3>
-                                <span class="qualification__subtitle">Lagos - 21CTL</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2016 - 2018
-                                </div>
-                            </div>
-                    
-                    
-                        </div> -->
-
-
-        <!--============QUALIFICATION 3======-->
-
-        <!-- <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">FullStack Engineering</h3>
-                                <span class="qualification__subtitle">Lagos - Andela StackUp</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2018 - 2019
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span> -->
-        <!-- <span class="qualification__line"></span> -->
-        <!-- </div>
-                    
-                        </div>
-                    
-                       
-                    </div>
-
-
-                
-
                 </div>
-
-                
-
-            </div>
-        </section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--==================== SERVICES ====================-->
-        <!-- <section class="services section" id="services">
-                <h2 class="section__title">Services</h2>
-                <span class="section__subtitle">What I offer</span>
-            <div class="services__container container grid"> -->
-        <!--=========SERVICES 1====-->
-        <!-- <div class="services__content">
-                        <div>
-                            <i class="uil uil-web-grid services__icon"></i>
-                            <h3 class="services__title">Frontend <br> Development</h3>
-                        </div>
-                        <span class="button button--flex button--small button--link services__button">
-            View More
-            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <h4 class="services__modal-title">Frontend Development </h4>
-                                <i class="uil uil-times services__modal-close"></i>
-                                <ul class="services__modal-services grid">
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Build pixel-perfect, buttery smooth UIs across both mobile platforms (Android & IOS).
-</p>
-                                    </li>
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Leverage native APIs for deep integrations with both platforms.
-</p>
-                                    </li>
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Diagnose and fix bugs and performance bottlenecks for performance that feels native.
-</p>
-                                    </li>
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Maintain code and write automated tests to ensure the product is of the highest quality.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-        <!--=========SERVICES 2====-->
-        <!-- <div class="services__content">
-                        <div>
-                            <i class="uil uil-arrow services__icon"></i>
-                            <h3 class="services__title">Mobile app <br> Development</h3>
-                        </div>
-                        <span class="button button--flex button--small button--link services__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <h4 class="services__modal-title">Mobile app development services</h4>
-                                <i class="uil uil-times services__modal-close"></i>
-                                <ul class="services__modal-services grid">
-                                        <li class="services__modal-service">
-                                            <i class="uil uil-check-circle services__modal-icon"></i>
-                                            <p>Design and develop user interface and interactions</p>
-                                        </li>
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Develops mobile device (telephone and tablet) applications for both the iOS and Android platforms.
-</p>
-                                    </li>
-                    
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Performs full lifecycle development; plans, defines, designs, builds, tests, debugs and deploys public-facing and
-                                        enterprise applications.</p>
-                                    </li>
-                    
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Publishes applications to iTunes Store and Google Play, as appropriate.
-</p>
-                                    </li>
-                    
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Designs, develops and integrates Restful APIs & Web Services.
-</p>
-                                    </li>
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Develops and document detailed mobile solution architectures. Integrates with mobile middleware as needed.
-                                        </p>
-                                    </li>
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Contributes application concepts for development and consideration.
-
-                                        </p>
-                                    </li>
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Consults with internal clients to define requirements, estimates and timelines for new or modified applications.
-                                        </p>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-        <!--=========SERVICES 3====-->
-        <!-- <div class="services__content">
-                        <div>
-                            <i class="uil uil-pen services__icon"></i>
-                            <h3 class="services__title">App deployment & <br> Hosting</h3>
-                        </div>
-                        <span class="button button--flex button--small button--link services__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <h4 class="services__modal-title">Cloud Hosting services</h4>
-                                <i class="uil uil-times services__modal-close"></i>
-                                <ul class="services__modal-services grid">
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Publishes applications to iTunes Store and Google Play, as appropriate.</p>
-                                    </li>
-                    
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Hosting and Deployment of mobile application to Cloud environment. (AWS, Heroku)</p>
-                                    </li>
-                    
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Design and implement systems on aws cloud</p>
-                                    </li>
-                    
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </section>
- -->
-
-
-
-
-
-
-        <!--==================== PORTFOLIO ====================-->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Projects</h2>
-            <span class="section__subtitle">Most recent work</span>
-            <div class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-                    <!--========== PORTFOLIO SABI ========-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/sabi_logo.png" alt="" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Sabi</h3>
-                            <p class="portfolio__description">An AI-powered WhatsApp customer service assistant for
-                                Nigerian small businesses. Business owners deploy a fully-trained bot in minutes — no
-                                developer needed.</p>
-                            <button class="button button--flex button--small portfolio__button" disabled
-                                style="cursor: not-allowed; opacity: 0.6; border: none; font-family: inherit;">
-                                Coming Soon
-                            </button>
-                        </div>
-                    </div>
-
-                    <!--========== PORTFOLIO 1 ========-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/talksay1.webp" alt="" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">TalkSay</h3>
-                            <p class="portfolio__description">Anonymous content and friends who speak your language
-                                TalkSay is designed to say What you truly feel in your language. Find community in those
-                                who share the same experiences.
-                                Connect to them and build identity. </p>
-                            <a href="https://play.google.com/store/apps/details?id=com.talksay.talksay&hl=en&gl=US&pli=1"
-                                class="button button--flex button--small portfolio__button">
-                                Download from Playstore
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!--========== PORTFOLIO 2 ========-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/doctorYa.webp" alt="" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">DoctorYa</h3>
-                            <p class="portfolio__description">A medical and teleconsultation app that allows users to
-                                search and consult closest medical professionals</p>
-                            <a href="https://play.google.com/store/apps/details?id=mx.doctorya.drya&hl=en&gl=US"
-                                class="button button--flex button--small portfolio__button">
-                                Download on Playstore
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-
-                    <!--========== PORTFOLIO 3 ========-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/pactiveLogo.png" alt="" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Pactive</h3>
-                            <p class="portfolio__description">PACTIVE is a lifestyle app designed to bring together
-                                social groups to improve their overall health and wellbeing.</p>
-                            <a href="https://play.google.com/store/apps/details?id=com.koicapital.pactive&hl=en&gl=US"
-                                class="button button--flex button--small portfolio__button">
-                                Download on Playstore
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--========== PORTFOLIO 4 ========-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/spotlight3.webp" alt="" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Spotlight</h3>
-                            <p class="portfolio__description">A mobile app for an advanced logistics tech ecosystem
-                                exclusively designed to streamline and optimise AB InBev's
-                                logistics operations throughout Africa.</p>
-                            <a href="https://play.google.com/store/apps/details?id=com.beertechafrica.fleetapp&hl=en"
-                                class="button button--flex button--small portfolio__button">
-                                Download on Playstore
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!--Add Arrows -->
-                <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-
-
-
-
-
-
             </div>
         </section>
 
+        <section class="services section" id="services" aria-labelledby="services-title">
+            <div class="section__heading container">
+                <p class="eyebrow">What we build</p>
+                <h2 class="section__title" id="services-title">Product capability for teams that want quality without
+                    drag.</h2>
+                <p class="section__subtitle">
+                    From first release to continued improvement, we build with clear scope, clean engineering, and a
+                    polished user experience.
+                </p>
+            </div>
 
+            <div class="services__container container grid">
+                <article class="service-card">
+                    <i class="uil uil-mobile-android service-card__icon"></i>
+                    <h3>Mobile product engineering</h3>
+                    <p>React Native apps, responsive interfaces, API integration, app store release support, and
+                        performance tuning.</p>
+                </article>
 
+                <article class="service-card">
+                    <i class="uil uil-robot service-card__icon"></i>
+                    <h3>AI assistants and automation</h3>
+                    <p>Customer support bots, WhatsApp workflows, business automations, and AI features designed around
+                        real operations.</p>
+                </article>
 
+                <article class="service-card">
+                    <i class="uil uil-layer-group service-card__icon"></i>
+                    <h3>MVP to scalable product</h3>
+                    <p>Product discovery, release planning, architecture choices, backend integrations, QA, and
+                        iteration after launch.</p>
+                </article>
 
-        <!--==================== PROJECT IN MIND ====================-->
-        <section class="project section">
-            <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">Ready to bring your new project to life?</h2>
-                        <p class="project__description">Let’s connect and make it happen together!. </p>
-                        <a href="#contact" class="button button--flex button--white">
-                            Contact Us
-                            <i class="uil uil-message project__icon button__icon"></i>
+                <article class="service-card">
+                    <i class="uil uil-rocket service-card__icon"></i>
+                    <h3>Launch and product support</h3>
+                    <p>Deployment, store readiness, bug fixing, analytics thinking, and technical care after the first
+                        version goes live.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="portfolio section" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="section__heading container">
+                <p class="eyebrow">Selected work</p>
+                <h2 class="section__title" id="portfolio-title">Mobile and AI products shaped for real users.</h2>
+                <p class="section__subtitle">
+                    A look at products AppEdge has built or contributed to across AI commerce, finance, learning,
+                    social, lifestyle, and logistics.
+                </p>
+            </div>
+
+            <div class="portfolio__container container" aria-label="Product showcase">
+                <article class="project-card project-card--featured project-card--playerquest">
+                    <div class="project-card__media">
+                        <img src="assets/img/playerquest_logo.png" alt="Player Quest app icon">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Trivia game</span>
+                        <h3>Player Quest</h3>
+                        <p>An AI football quiz where fans ask yes/no questions, unlock hints, reveal player cards, and
+                            climb the leaderboard.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.voke.guesstheplayer" target="_blank"
+                            rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
                         </a>
                     </div>
-                    <img src="assets/img/appedge_logo.png" alt="" class="project__img"
-                        style="object-fit: contain; padding: 1rem; background-color: #fff; border-radius: .75rem;">
+                </article>
+
+                <article class="project-card project-card--sabi">
+                    <div class="project-card__media">
+                        <img src="assets/img/sabi_logo.png" alt="Sabi app logo">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">AI product</span>
+                        <h3>Sabi</h3>
+                        <p>An AI-powered WhatsApp customer service assistant for Nigerian small businesses. Owners can
+                            deploy a trained bot in minutes without needing a developer.</p>
+                        <span class="project-card__status project-card__status--live">Launched</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.voke.sabi" target="_blank"
+                            rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--kashpulse">
+                    <div class="project-card__media">
+                        <img src="assets/img/kashpulse_icon.png" alt="KashPulse app icon">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Finance</span>
+                        <h3>KashPulse</h3>
+                        <p>Arbitrage intelligence for P2P and spot traders, helping users spot exchange price gaps,
+                            bridge trades, and move faster with real-time market signals.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.voke.kashpulse" target="_blank"
+                            rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--coachapp">
+                    <div class="project-card__media">
+                        <img src="assets/img/coachapp_icon.png" alt="CoachApp app icon">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Education</span>
+                        <h3>CoachApp</h3>
+                        <p>A coaching academy and global community platform with training, certifications, live
+                            workshops, mentoring, and AI CoachBot support.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.thecoachingmasters.client&hl=en"
+                            target="_blank" rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--talksay">
+                    <div class="project-card__media">
+                        <img src="assets/img/talksay1.webp" alt="TalkSay mobile app preview">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Social mobile app</span>
+                        <h3>TalkSay</h3>
+                        <p>An anonymous social app for expression, language, identity, and community building.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.talksay.talksay&hl=en&gl=US&pli=1"
+                            target="_blank" rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--pactive">
+                    <div class="project-card__media">
+                        <img src="assets/img/pactiveLogo.png" alt="Pactive app logo">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Lifestyle</span>
+                        <h3>Pactive</h3>
+                        <p>A lifestyle app designed to bring social groups together and improve health and wellbeing.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.koicapital.pactive&hl=en&gl=US"
+                            target="_blank" rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--spotlight">
+                    <div class="project-card__media">
+                        <img src="assets/img/spotlight3.webp" alt="Spotlight logistics mobile app preview">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Enterprise logistics</span>
+                        <h3>Spotlight</h3>
+                        <p>A mobile logistics ecosystem designed to streamline and optimize AB InBev operations across
+                            Africa.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.beertechafrica.fleetapp&hl=en"
+                            target="_blank" rel="noopener" class="project-card__link">
+                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="process section" aria-labelledby="process-title">
+            <div class="section__heading container">
+                <p class="eyebrow">How we work</p>
+                <h2 class="section__title" id="process-title">A practical path from idea to launch.</h2>
+            </div>
+
+            <div class="process__container container grid">
+                <div class="process-step">
+                    <span>01</span>
+                    <h3>Clarify</h3>
+                    <p>Define the customer, workflow, must-have features, and launch constraints.</p>
+                </div>
+                <div class="process-step">
+                    <span>02</span>
+                    <h3>Design</h3>
+                    <p>Shape clean flows, interface states, technical architecture, and delivery milestones.</p>
+                </div>
+                <div class="process-step">
+                    <span>03</span>
+                    <h3>Build</h3>
+                    <p>Develop, test, and iterate with frequent product reviews and quality checks.</p>
+                </div>
+                <div class="process-step">
+                    <span>04</span>
+                    <h3>Launch</h3>
+                    <p>Prepare release assets, deploy, monitor, and keep improving after users arrive.</p>
                 </div>
             </div>
         </section>
 
-        <!--==================== TESTIMONIAL ====================-->
-        <section class="testimonial section">
-            <h2 class="section__title">Testimonial</h2>
-            <span class="section__subtitle"></span>
-            <div class="testimonial__container container swiper-container">
-                <div class="swiper-wrapper">
-                    <!--==================== TESTIMONIAL 1 ====================-->
-                    <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-                                <img src="assets/img/emmanuel.jpeg" alt="" class="testimonial__img">
-                                <div>
-                                    <h3 class="testimonial__name">Emmanuel Ezehiwele</h3>
-                                    <!-- <span class="testimonial__client">Client</span> -->
-                                </div>
-                            </div>
-                            <div>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class=" uil uil-star testimonial__icon-star"></i>
+        <section class="testimonial section" id="clients" aria-labelledby="testimonial-title">
+            <div class="section__heading container">
+                <p class="eyebrow">Client words</p>
+                <h2 class="section__title" id="testimonial-title">Trusted for quality, clarity, and support.</h2>
+            </div>
 
-                            </div>
-
+            <div class="testimonial__container container grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-card__header">
+                        <img src="assets/img/emmanuel.png" alt="Emmanuel Ezehiwele">
+                        <div>
+                            <h3>Emmanuel Ezehiwele</h3>
+                            <span>Startup ecosystem partner</span>
                         </div>
-                        <p class="testimonial__description">AppEdge has demonstrated high skill and professionalism
-                            in discharging its duties as an App and Software developer.
-                            Its professional support given to tech startups and young tech professionals has been
-                            helpful. We will always recommend them.
-                        </p>
                     </div>
+                    <p>
+                        AppEdge has demonstrated high skill and professionalism as an app and software developer. Their
+                        support for tech startups and young professionals has been helpful, and we recommend them.
+                    </p>
+                </article>
 
-
-
-
-                    <!--==================== TESTIMONIAL 2 ====================-->
-                    <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-                                <img src="assets/img/justina.jpg" alt="" class="testimonial__img">
-                                <div>
-                                    <h3 class="testimonial__name">Justina Uja</h3>
-                                    <span class="testimonial__client">Client</span>
-                                </div>
-                            </div>
-                            <div>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class=" uil uil-star testimonial__icon-star"></i>
-
-                            </div>
-
+                <article class="testimonial-card">
+                    <div class="testimonial-card__header">
+                        <img src="assets/img/justina.jpg" alt="Justina Uja">
+                        <div>
+                            <h3>Justina Uja</h3>
+                            <span>Client</span>
                         </div>
-                        <p class="testimonial__description">I got a good impression. AppEdge carry
-                            out my project with all the possible quality and attention.
-                        </p>
                     </div>
-
-
-
-
-                    <!--==================== TESTIMONIAL 3 ====================-->
-                    <!-- <div class="testimonial__content swiper-slide">
-                            <div class="testimonial__data">
-                                <div class="testimonial__header">
-                                    <img src="assets/img/testimonial1.jpg" alt="" class="testimonial__img">
-                                    <div>
-                                        <h3 class="testimonial__name">Sara Smith</h3>
-                                        <span class="testimonial__client">Client</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <i class="uil uil-star testimonial__icon-star"></i>
-                                    <i class="uil uil-star testimonial__icon-star"></i>
-                                    <i class="uil uil-star testimonial__icon-star"></i>
-                                    <i class="uil uil-star testimonial__icon-star"></i>
-                                    <i class=" uil uil-star testimonial__icon-star"></i>
-                        
-                                </div>
-                        
-                            </div>
-                            <p class="testimonial__description">I get a good impression, I carry
-                                out my project with all the possible quality and attention and
-                                support 24 hours a day.
-                            </p>
-                        </div> -->
-
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination swiper-pagination-testimonial"></div>
-
-                </div>
+                    <p>
+                        AppEdge handled my project with quality and attention. I had a good impression throughout the
+                        work.
+                    </p>
+                </article>
+            </div>
         </section>
 
-        <!--==================== CONTACT US ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contact Us</h2>
-            <span class="section__subtitle">Get in touch</span>
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
             <div class="contact__container container grid">
-                <div>
-                    <div class="contact__information">
-                        <i class="uil uil-whatsapp contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Chat Me</h3>
-                            <span class="contact__subtitle">+234 (0) 816 463 7381</span>
-                        </div>
-                    </div>
-                    <div class="contact__information">
-                        <i class="uil uil-phone contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Call Me</h3>
-                            <span class="contact__subtitle">+234 (0) 706 100 7133</span>
-                        </div>
-                    </div>
+                <div class="contact__intro">
+                    <p class="eyebrow">Contact us</p>
+                    <h2 class="section__title" id="contact-title">Tell us what you want to build.</h2>
+                    <p class="section__subtitle">
+                        Share your idea, product challenge, or launch goal. We will help you shape the next practical
+                        step.
+                    </p>
 
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">hello@appedgeng.com</span>
+                    <div class="contact__methods">
+                        <a href="https://wa.me/2348164637381" target="_blank" rel="noopener" class="contact__method">
+                            <i class="uil uil-whatsapp"></i>
+                            <span>
+                                <strong>WhatsApp</strong>
+                                +234 (0) 816 463 7381
+                            </span>
+                        </a>
+                        <a href="tel:+2347061007133" class="contact__method">
+                            <i class="uil uil-phone"></i>
+                            <span>
+                                <strong>Call</strong>
+                                +234 (0) 706 100 7133
+                            </span>
+                        </a>
+                        <a href="mailto:hello@appedgeng.com" class="contact__method">
+                            <i class="uil uil-envelope"></i>
+                            <span>
+                                <strong>Email</strong>
+                                hello@appedgeng.com
+                            </span>
+                        </a>
+                        <div class="contact__method">
+                            <i class="uil uil-map-marker"></i>
+                            <span>
+                                <strong>Location</strong>
+                                Lagos, Nigeria
+                            </span>
                         </div>
                     </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-map-marker contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">Lagos, Nigeria</span>
-                        </div>
-                    </div>
-
                 </div>
 
-                <form action="" class="contact__form grid">
+                <form class="contact__form grid" id="contact-form">
                     <div class="contact__inputs grid">
-                        <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input"></input>
-                        </div>
-                        <div class="contact__content">
-                            <label for="" class="contact__label">Email</label>
-                            <input type="email" class="contact__input"></input>
-                        </div>
+                        <label class="contact__field">
+                            <span>Name</span>
+                            <input type="text" name="name" autocomplete="name" required>
+                        </label>
 
-
-                    </div>
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Project</label>
-                        <input type="text" class="contact__input"></input>
+                        <label class="contact__field">
+                            <span>Email</span>
+                            <input type="email" name="email" autocomplete="email" required>
+                        </label>
                     </div>
 
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Message</label>
-                        <textarea name="" id="" rows="7" cols="0" class="contact__input"></textarea>
-                    </div>
-                    <div>
-                        <a href="#" class="button button--flex">
-                            Send Message
-                            <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
+                    <label class="contact__field">
+                        <span>Project type</span>
+                        <input type="text" name="project" placeholder="Mobile app, AI assistant, MVP..." required>
+                    </label>
+
+                    <label class="contact__field">
+                        <span>Message</span>
+                        <textarea name="message" rows="6" placeholder="Tell us about the product, timeline, and goals."
+                            required></textarea>
+                    </label>
+
+                    <button type="submit" class="button button--flex">
+                        Send message <i class="uil uil-message button__icon"></i>
+                    </button>
                 </form>
-
             </div>
         </section>
     </main>
 
-    <!--==================== FOOTER ====================-->
     <footer class="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div>
-                    <h1 class="footer__title">
-                        <img src="assets/img/appedge_logo.png" alt=""
-                            style="width: 30px; height: 30px; object-fit: contain; margin-right: .5rem; vertical-align: middle; border-radius: 6px;">
-                        AppEdge
-                    </h1>
-                    <span class="footer__subtitle">Mobile App Development & AI Products</span>
-                </div>
-                <ul class="footer__links">
-                    <!-- <li>
-                        <a href="#services" class="footer__link">Services</a>
-                    </li> -->
-                    <li>
-                        <a href="#portfolio" class="footer__link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer__link">Contact us</a>
-                    </li>
-                </ul>
-
-                <div class="footer__socials">
-                    <a href="https://www.linkedin.com/company/appedge-tech/" target="_blank" class="home__social-icon">
-                        <i class="uil uil-linkedin-alt"></i>
-                    </a>
-                    <a href="https://github.com/voke1" target="_blank" class="home__social-icon">
-                        <i class="uil uil-github-alt"></i>
-                    </a>
-                    <a href="https://twitter.com/voke2sure" target="_blank" class="home__social-icon">
-                        <i class="uil uil-twitter-alt"></i>
-                    </a>
-                </div>
+        <div class="footer__container container grid">
+            <div>
+                <a href="#home" class="footer__brand">
+                    <span class="brand-mark" aria-hidden="true">A</span>
+                    <span>AppEdge</span>
+                </a>
+                <p>Mobile app development and AI products for African markets.</p>
             </div>
 
-            <p class="footer__copy">&#169; AppEdge. All rights reserved</p>
+            <ul class="footer__links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-
-
+            <div class="footer__socials" aria-label="Social links">
+                <a href="https://www.linkedin.com/company/appedge-tech/" target="_blank" rel="noopener"
+                    aria-label="AppEdge on LinkedIn">
+                    <i class="uil uil-linkedin-alt"></i>
+                </a>
+                <a href="https://github.com/voke1" target="_blank" rel="noopener" aria-label="AppEdge on GitHub">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+                <a href="https://twitter.com/voke2sure" target="_blank" rel="noopener" aria-label="AppEdge on X">
+                    <i class="uil uil-twitter-alt"></i>
+                </a>
+            </div>
         </div>
+
+        <p class="footer__copy">&#169; AppEdge. All rights reserved.</p>
     </footer>
 
-    <!--==================== SCROLL TOP ====================-->
-
-    <a href="#" class="scrollup" id="scroll-up">
+    <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-
-    <!--==================== SWIPER JS ====================-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

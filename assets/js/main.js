@@ -1,198 +1,250 @@
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
+const navLinks = document.querySelectorAll(".nav__link");
+const header = document.getElementById("header");
+const scrollUpButton = document.getElementById("scroll-up");
+const contactForm = document.getElementById("contact-form");
+const productTrack = document.querySelector(".portfolio__container");
+const revealSelectors = [
+  ".home__title",
+  ".home__subtitle",
+  ".home__description",
+  ".home__actions",
+  ".home__proof",
+  ".section__heading",
+  ".about__visual",
+  ".about__data",
+  ".about__values > div",
+  ".service-card",
+  ".project-card",
+  ".process-step",
+  ".testimonial-card",
+  ".contact__method",
+  ".contact__form",
+  ".footer__container > *",
+];
 
-console.log("JAVSCRIPT LOADED!!!!!!!")
+function openMenu() {
+  if (!navMenu || !navToggle) return;
 
-/*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close");
-
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    console.log("CLIKED ONECES")
-    navMenu.classList.add("show-menu");
-  });
+  navMenu.classList.add("show-menu");
+  document.body.classList.add("nav-open");
+  navToggle.setAttribute("aria-expanded", "true");
 }
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
+function closeMenu() {
+  if (!navMenu || !navToggle) return;
 
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
-}
-
-/*==================== REMOVE MENU MOBILE ====================*/
-
-const navLink = document.querySelectorAll(".nav__link");
-function linkAction() {
-  console.log("NAV CLICKED")
-  const navMenu = document.getElementById("nav-menu");
-  // When we click on each nay__link, we remove the show-menu class
   navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName("skills__content"),
-  skillsHeader = document.querySelectorAll(".skills__header");
-
-function toggleSkills() {
-  let itemClass = this.parentNode.className;
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = "skills__content skills__close";
-  }
-  if (itemClass === "skills__content skills__close") {
-    this.parentNode.className = "skills__content skills__open";
-  }
+  document.body.classList.remove("nav-open");
+  navToggle.setAttribute("aria-expanded", "false");
 }
 
-skillsHeader.forEach((el) => {
-  el.addEventListener("click", toggleSkills);
+navToggle?.addEventListener("click", openMenu);
+navClose?.addEventListener("click", closeMenu);
+navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
 });
 
-/*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll("[data-target]"),
-  tabContents = document.querySelectorAll("[data-content]");
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = document.querySelector(tab.dataset.target);
-    tabContents.forEach((tabContent) => {
-      tabContent.classList.remove("qualification__active");
-    });
-    target.classList.add("qualification__active");
-    tabs.forEach((tab) => {
-      tab.classList.remove("qualification__active");
-    });
-    tab.classList.add("qualification__active");
+function updateHeader() {
+  if (!header) return;
+
+  header.classList.toggle("scroll-header", window.scrollY >= 24);
+}
+
+function updateScrollButton() {
+  if (!scrollUpButton) return;
+
+  scrollUpButton.classList.toggle("show-scroll", window.scrollY >= 560);
+}
+
+function updateActiveLink() {
+  const sections = document.querySelectorAll("section[id]");
+  const offset = window.scrollY + 120;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+    const link = document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
+
+    if (!link) return;
+
+    link.classList.toggle("active-link", offset >= sectionTop && offset < sectionBottom);
   });
-});
+}
 
-/*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll(".services__modal"),
-  modalBtns = document.querySelectorAll(".services__button"),
-  modalCloses = document.querySelectorAll(".services__modal-close");
-let modal = function (modalClick) {
-  modalViews[modalClick].classList.add("active-modal");
-};
-modalBtns.forEach((modalBtn, i) => {
-  modalBtn.addEventListener("click", () => {
-    modal(i);
-  });
-});
+function handleScroll() {
+  updateHeader();
+  updateScrollButton();
+  updateActiveLink();
+}
 
-modalCloses.forEach((modalClose) => {
-  modalClose.addEventListener("click", () => {
-    modalViews.forEach((modalView) => {
-      modalView.classList.remove("active-modal");
-    });
-  });
-}); 
+window.addEventListener("scroll", handleScroll, { passive: true });
+window.addEventListener("load", handleScroll);
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-  cssMode: true,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+function setupRevealAnimations() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = revealSelectors
+    .flatMap((selector) => Array.from(document.querySelectorAll(selector)))
+    .filter((item, index, items) => items.indexOf(item) === index);
 
-/*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 48,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal");
 
-  breakpoints: {
-    568: {
-      slidesPerView: 2,
-    },
-  },
-});
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    let sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link");
-    } else {
-      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link");
+    if (item.matches(".project-card, .service-card, .process-step, .testimonial-card")) {
+      item.classList.add("reveal--soft");
     }
+
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 0.08}s`);
   });
-}
-window.addEventListener("scroll", scrollActive);
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader() {
-  const nav = document.getElementById("header");
-  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header
-  if (this.scrollY >= 80) {
-    nav.classList.add("scroll-header");
-  } else {
-    nav.classList.remove("scroll-header");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
   }
-}
-window.addEventListener("scroll", scrollHeader);
 
-/*==================== SHOW SCROLL UP ====================*/
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-function scrollUp() {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 560 viewport height, add the show-scroll class 1
-  if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
-}
-window.addEventListener("scroll", scrollUp);
-
-/*==================== DARK LIGHT THEME ====================*/
-const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "uil-sun";
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-// we obtain the current theme that the interface has by validating the dark-theme class
-const getcurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getcurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
-
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.16,
+      rootMargin: "0px 0px -8% 0px",
+    }
   );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme
-  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
 }
 
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // we save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getcurrentTheme());
-  localStorage.setItem("selected-icon", getcurrentIcon());
+setupRevealAnimations();
+
+function setupProductAutoScroll() {
+  if (!productTrack) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cards = Array.from(productTrack.querySelectorAll(".project-card"));
+  let intervalId;
+  let resumeTimeoutId;
+  let isInView = false;
+  let isPaused = false;
+
+  if (reduceMotion || cards.length < 2) {
+    return;
+  }
+
+  const stop = () => {
+    if (!intervalId) return;
+
+    window.clearInterval(intervalId);
+    intervalId = undefined;
+  };
+
+  const scrollToNextCard = () => {
+    const currentLeft = productTrack.scrollLeft;
+    const maxLeft = productTrack.scrollWidth - productTrack.clientWidth - 4;
+    const trackLeft = productTrack.getBoundingClientRect().left;
+    const cardPositions = cards.map((card) => (
+      productTrack.scrollLeft + card.getBoundingClientRect().left - trackLeft
+    ));
+    const nextLeft = currentLeft >= maxLeft
+      ? 0
+      : cardPositions.find((position) => position > currentLeft + 12) || 0;
+
+    productTrack.scrollTo({
+      left: nextLeft,
+      behavior: "smooth",
+    });
+  };
+
+  const start = () => {
+    if (productTrack.scrollWidth <= productTrack.clientWidth) return;
+    if (intervalId || isPaused || !isInView) return;
+
+    intervalId = window.setInterval(scrollToNextCard, 3600);
+  };
+
+  const pause = (resumeDelay = 0) => {
+    isPaused = true;
+    stop();
+    window.clearTimeout(resumeTimeoutId);
+
+    if (resumeDelay > 0) {
+      resumeTimeoutId = window.setTimeout(() => {
+        isPaused = false;
+        start();
+      }, resumeDelay);
+    }
+  };
+
+  const resume = () => {
+    isPaused = false;
+    window.clearTimeout(resumeTimeoutId);
+    start();
+  };
+
+  productTrack.addEventListener("pointerdown", () => pause(5000), { passive: true });
+  productTrack.addEventListener("focusin", () => pause());
+  productTrack.addEventListener("focusout", resume);
+  productTrack.addEventListener("wheel", () => pause(4000), { passive: true });
+  productTrack.addEventListener("touchstart", () => pause(5000), { passive: true });
+
+  if (!("IntersectionObserver" in window)) {
+    isInView = true;
+    start();
+    return;
+  }
+
+  const trackObserver = new IntersectionObserver(
+    ([entry]) => {
+      isInView = entry.isIntersecting;
+
+      if (isInView) start();
+      else stop();
+    },
+    { threshold: 0.35 }
+  );
+
+  trackObserver.observe(productTrack);
+
+  window.setTimeout(() => {
+    const rect = productTrack.getBoundingClientRect();
+    isInView = rect.bottom > 0 && rect.top < window.innerHeight;
+    start();
+  }, 800);
+}
+
+setupProductAutoScroll();
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(contactForm);
+  const name = String(formData.get("name") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const project = String(formData.get("project") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+
+  const subject = `Project inquiry: ${project || "New AppEdge project"}`;
+  const body = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Project type: ${project}`,
+    "",
+    message,
+  ].join("\n");
+
+  window.location.href = `mailto:hello@appedgeng.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
 });
