@@ -54,38 +54,64 @@
     <main class="main">
         <section class="home section" id="home" aria-labelledby="home-title">
             <div class="home__overlay"></div>
-            <div class="home__container container">
-                <h1 class="home__title" id="home-title">AppEdge</h1>
-                <p class="home__subtitle">Premium mobile apps and AI assistants for businesses ready to move faster.
-                </p>
-                <p class="home__description">
-                    We help founders and teams design, build, launch, and improve reliable digital products for African
-                    markets, from customer-facing mobile apps to AI-powered commerce tools like Sabi.
-                </p>
+            <div class="home__container container grid">
+                <div class="home__copy">
+                    <p class="home__badge"><span></span> Independent product studio · Lagos</p>
+                    <h1 class="home__title" id="home-title">We build products people want to return to.</h1>
+                    <p class="home__subtitle">Premium mobile experiences and intelligent products—designed with
+                        clarity, engineered for real markets.</p>
+                    <div class="home__actions" aria-label="Primary actions">
+                        <a href="#contact" class="button button--flex">
+                            Start a project <i class="uil uil-arrow-up-right button__icon"></i>
+                        </a>
+                        <a href="#portfolio" class="button button--ghost button--flex">
+                            Explore our work <i class="uil uil-arrow-down button__icon"></i>
+                        </a>
+                    </div>
 
-                <div class="home__actions" aria-label="Primary actions">
-                    <a href="#contact" class="button button--flex">
-                        Start a project <i class="uil uil-message button__icon"></i>
-                    </a>
-                    <a href="#portfolio" class="button button--ghost button--flex">
-                        View work <i class="uil uil-arrow-down button__icon"></i>
-                    </a>
+                    <dl class="home__proof" aria-label="Company highlights">
+                        <div>
+                            <dt>10+</dt>
+                            <dd>Years building</dd>
+                        </div>
+                        <div>
+                            <dt>6+</dt>
+                            <dd>Products shipped</dd>
+                        </div>
+                        <div>
+                            <dt>AI + Mobile</dt>
+                            <dd>Product focus</dd>
+                        </div>
+                    </dl>
                 </div>
 
-                <dl class="home__proof" aria-label="Company highlights">
-                    <div>
-                        <dt>10+</dt>
-                        <dd>Years building</dd>
+                <div class="home__visual" aria-label="Selected AppEdge products">
+                    <div class="home__visual-orbit" aria-hidden="true"></div>
+                    <a class="home-product home-product--playerquest" href="/player-quest/">
+                        <span class="home-product__eyebrow">Live on Google Play</span>
+                        <img src="assets/img/playerquest_logo.png" alt="Player Quest">
+                        <span class="home-product__copy">
+                            <strong>Player Quest</strong>
+                            <small>Football deduction, reimagined.</small>
+                        </span>
+                        <i class="uil uil-arrow-up-right"></i>
+                    </a>
+                    <a class="home-product home-product--sabi"
+                        href="https://play.google.com/store/apps/details?id=com.voke.sabi" target="_blank"
+                        rel="noopener">
+                        <span class="home-product__eyebrow">AI commerce</span>
+                        <img src="assets/img/sabi_logo.png" alt="Sabi">
+                        <span class="home-product__copy">
+                            <strong>Sabi</strong>
+                            <small>Always-on WhatsApp support.</small>
+                        </span>
+                        <i class="uil uil-arrow-up-right"></i>
+                    </a>
+                    <div class="home__visual-note">
+                        <span class="home__visual-dot"></span>
+                        <span>Designed, built, and shipped by AppEdge</span>
                     </div>
-                    <div>
-                        <dt>6+</dt>
-                        <dd>Products shipped</dd>
-                    </div>
-                    <div>
-                        <dt>AI + Mobile</dt>
-                        <dd>Product focus</dd>
-                    </div>
-                </dl>
+                </div>
             </div>
         </section>
 
@@ -102,7 +128,13 @@
 
             <div class="about__container container grid">
                 <div class="about__visual" aria-label="AppEdge product focus">
-                    <img src="assets/img/appedge_logo.png" alt="AppEdge logo" class="about__logo">
+                    <div class="about__identity">
+                        <span class="brand-mark brand-mark--large" aria-hidden="true">A</span>
+                        <div>
+                            <span>Independent product studio</span>
+                            <strong>AppEdge</strong>
+                        </div>
+                    </div>
                     <div class="about__product">
                         <img src="assets/img/sabi_logo.png" alt="Sabi AI assistant logo">
                         <div>
@@ -204,9 +236,8 @@
                         <h3>Player Quest</h3>
                         <p>An AI football quiz where fans ask yes/no questions, unlock hints, reveal player cards, and
                             climb the leaderboard.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.voke.guesstheplayer" target="_blank"
-                            rel="noopener" class="project-card__link">
-                            View on Play Store <i class="uil uil-external-link-alt"></i>
+                        <a href="/player-quest/" class="project-card__link">
+                            View <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
                 </article>
