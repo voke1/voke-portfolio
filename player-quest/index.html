@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="See how Player Quest turns football knowledge into a live AI-powered deduction game."
+		/>
+		<meta name="theme-color" content="#03152f" />
+		<meta property="og:title" content="Player Quest | Football Mystery Game" />
+		<meta
+			property="og:description"
+			content="Choose a mystery player, ask natural clues, make the guess, reveal the card, and climb the leaderboard."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://appedgeng.com/player-quest/" />
+		<meta property="og:image" content="https://appedgeng.com/assets/img/playerquest_logo.png" />
+		<link rel="icon" href="../assets/img/playerquest_logo.png" type="image/png" />
+		<title>Player Quest | See How It Plays</title>
+		<style>
+			:root {
+				color-scheme: dark;
+				--navy: #03152f;
+				--navy-deep: #010713;
+				--navy-soft: #082a55;
+				--cyan: #38d6ff;
+				--gold: #ffcb45;
+				--white: #f8fbff;
+				--muted: #a9bad0;
+				--header-height: 88px;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html {
+				background: var(--navy-deep);
+			}
+
+			body {
+				min-width: 320px;
+				min-height: 100vh;
+				margin: 0;
+				background:
+					radial-gradient(circle at 15% 20%, rgba(13, 119, 255, 0.2), transparent 36%),
+					radial-gradient(circle at 90% 88%, rgba(255, 203, 69, 0.1), transparent 34%),
+					var(--navy);
+				color: var(--white);
+				font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				overflow-x: hidden;
+			}
+
+			body::before {
+				position: fixed;
+				inset: 0;
+				z-index: -1;
+				background-image:
+					linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+				background-size: 54px 54px;
+				content: "";
+				mask-image: linear-gradient(to bottom, #000, transparent 96%);
+			}
+
+			button,
+			a {
+				-webkit-tap-highlight-color: transparent;
+			}
+
+			.site-header {
+				height: var(--header-height);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				background: rgba(2, 12, 29, 0.82);
+				backdrop-filter: blur(18px);
+			}
+
+			.header-inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: min(1760px, calc(100% - 56px));
+				height: 100%;
+				margin: 0 auto;
+			}
+
+			.brand {
+				display: inline-flex;
+				align-items: center;
+				gap: 15px;
+				color: inherit;
+				text-decoration: none;
+			}
+
+			.brand-ball {
+				width: 52px;
+				height: 52px;
+				object-fit: contain;
+				filter: drop-shadow(0 8px 18px rgba(255, 203, 69, 0.2));
+			}
+
+			.brand-wordmark {
+				width: 132px;
+				height: auto;
+				object-fit: contain;
+			}
+
+			.studio-link {
+				color: var(--muted);
+				font-size: 13px;
+				font-weight: 850;
+				letter-spacing: 0.18em;
+				text-decoration: none;
+				text-transform: uppercase;
+				transition: color 180ms ease;
+			}
+
+			.studio-link:hover,
+			.studio-link:focus-visible {
+				color: var(--cyan);
+			}
+
+			.flow-section {
+				position: relative;
+				display: grid;
+				min-height: calc(100svh - var(--header-height));
+				place-items: center;
+				overflow: hidden;
+			}
+
+			.flow-shell {
+				display: grid;
+				grid-template-columns: minmax(360px, 0.78fr) minmax(560px, 1.22fr);
+				align-items: center;
+				width: min(1600px, calc(100% - 128px));
+				min-height: calc(100svh - var(--header-height));
+				gap: clamp(48px, 7vw, 118px);
+				padding: 42px 0 76px;
+			}
+
+			.phone-stage {
+				position: relative;
+				display: grid;
+				place-items: center;
+			}
+
+			.phone-glow {
+				position: absolute;
+				width: min(72vw, 560px);
+				aspect-ratio: 1;
+				border-radius: 50%;
+				background: rgba(13, 119, 255, 0.2);
+				filter: blur(80px);
+				pointer-events: none;
+			}
+
+			.phone {
+				position: relative;
+				z-index: 1;
+				width: min(31vw, calc((100svh - var(--header-height) - 118px) * 0.48), 390px);
+				min-width: 246px;
+				aspect-ratio: 688 / 1434;
+				padding: 13px;
+				border: 2px solid rgba(255, 203, 69, 0.82);
+				border-radius: 52px;
+				background: linear-gradient(145deg, #2a4f7a, #06162c);
+				box-shadow: 0 42px 100px rgba(0, 0, 0, 0.56), 0 0 54px rgba(56, 214, 255, 0.08);
+				transform: perspective(1200px) rotateY(1.8deg);
+			}
+
+			.phone-screen {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				border-radius: 39px;
+				background: #020915;
+			}
+
+			.phone-screen video {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.level-editorial {
+				position: absolute;
+				top: 6.9%;
+				left: 0;
+				right: 0;
+				display: flex;
+				min-height: 13.5%;
+				align-items: center;
+				justify-content: center;
+				border-top: 1px solid rgba(56, 214, 255, 0.48);
+				border-bottom: 1px solid rgba(255, 203, 69, 0.48);
+				background: linear-gradient(90deg, rgba(3, 21, 47, 0.99), rgba(8, 53, 103, 0.99), rgba(3, 21, 47, 0.99));
+				box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+				opacity: 1;
+				pointer-events: none;
+				transition: opacity 320ms ease;
+			}
+
+			.level-editorial.is-hidden {
+				opacity: 0;
+			}
+
+			.level-editorial span {
+				color: var(--white);
+				font-size: clamp(12px, 1.05vw, 15px);
+				font-weight: 950;
+				letter-spacing: 0.13em;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.flow-copy {
+				max-width: 760px;
+			}
+
+			.flow-kicker {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				margin: 0 0 24px;
+				color: var(--cyan);
+				font-size: 14px;
+				font-weight: 900;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+			}
+
+			.flow-kicker::before {
+				width: 46px;
+				height: 2px;
+				background: linear-gradient(90deg, var(--gold), var(--cyan));
+				content: "";
+			}
+
+			.step-number {
+				display: grid;
+				width: 74px;
+				height: 74px;
+				margin-bottom: 22px;
+				place-items: center;
+				border: 2px solid var(--gold);
+				border-radius: 22px;
+				background: rgba(255, 203, 69, 0.1);
+				box-shadow: 0 0 30px rgba(255, 203, 69, 0.24);
+				color: var(--gold);
+				font-size: 28px;
+				font-weight: 950;
+			}
+
+			.step-content {
+				transition: opacity 160ms ease, transform 160ms ease;
+			}
+
+			.step-content.is-changing {
+				opacity: 0;
+				transform: translateX(24px);
+			}
+
+			.step-label {
+				margin: 0 0 10px;
+				color: var(--cyan);
+				font-size: 14px;
+				font-weight: 950;
+				letter-spacing: 0.22em;
+				text-transform: uppercase;
+			}
+
+			.step-title {
+				max-width: 720px;
+				margin: 0;
+				font-size: clamp(52px, 5.2vw, 82px);
+				font-weight: 950;
+				letter-spacing: -0.045em;
+				line-height: 0.98;
+				text-wrap: balance;
+			}
+
+			.step-description {
+				max-width: 680px;
+				margin: 24px 0 0;
+				color: var(--muted);
+				font-size: clamp(20px, 1.85vw, 29px);
+				line-height: 1.42;
+			}
+
+			.step-progress {
+				display: grid;
+				grid-template-columns: repeat(6, minmax(32px, 1fr));
+				max-width: 660px;
+				gap: 10px;
+				margin-top: 38px;
+			}
+
+			.progress-step {
+				position: relative;
+				height: 16px;
+				border: 0;
+				background: transparent;
+				cursor: pointer;
+			}
+
+			.progress-step::before {
+				position: absolute;
+				top: 5px;
+				left: 0;
+				right: 0;
+				height: 6px;
+				border-radius: 999px;
+				background: rgba(255, 255, 255, 0.18);
+				content: "";
+				transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+			}
+
+			.progress-step:hover::before,
+			.progress-step:focus-visible::before {
+				background: rgba(56, 214, 255, 0.48);
+				transform: scaleY(1.45);
+			}
+
+			.progress-step.is-active::before {
+				background: var(--gold);
+				box-shadow: 0 0 20px rgba(255, 203, 69, 0.42);
+			}
+
+			.loop-note {
+				max-width: 660px;
+				margin: 28px 0 0;
+				padding: 18px 22px;
+				border: 1px solid rgba(56, 214, 255, 0.3);
+				border-radius: 18px;
+				background: rgba(56, 214, 255, 0.08);
+				font-size: 18px;
+				font-weight: 780;
+				line-height: 1.38;
+			}
+
+			.play-download {
+				position: fixed;
+				right: 28px;
+				bottom: 24px;
+				z-index: 20;
+				display: block;
+				border-radius: 13px;
+				box-shadow: 0 18px 50px rgba(0, 0, 0, 0.48);
+				transition: transform 180ms ease, filter 180ms ease;
+			}
+
+			.play-download:hover,
+			.play-download:focus-visible {
+				filter: brightness(1.08);
+				transform: translateY(-3px);
+			}
+
+			.play-download img {
+				display: block;
+				width: 216px;
+				height: auto;
+			}
+
+			@media (max-width: 1050px) {
+				:root {
+					--header-height: 76px;
+				}
+
+				.header-inner {
+					width: min(100% - 36px, 900px);
+				}
+
+				.brand-ball {
+					width: 44px;
+					height: 44px;
+				}
+
+				.brand-wordmark {
+					width: 112px;
+				}
+
+				.flow-shell {
+					grid-template-columns: 330px minmax(0, 1fr);
+					width: min(100% - 52px, 960px);
+					gap: 54px;
+					padding-bottom: 106px;
+				}
+
+				.phone {
+					width: min(310px, calc((100svh - var(--header-height) - 118px) * 0.48));
+					min-width: 0;
+				}
+
+				.step-title {
+					font-size: clamp(43px, 6.2vw, 64px);
+				}
+			}
+
+			@media (max-width: 760px) {
+				body {
+					overflow-y: auto;
+				}
+
+				.studio-link {
+					font-size: 11px;
+					letter-spacing: 0.13em;
+				}
+
+				.flow-section {
+					display: block;
+					min-height: 0;
+				}
+
+				.flow-shell {
+					grid-template-columns: 1fr;
+					width: min(100% - 34px, 540px);
+					min-height: 0;
+					gap: 44px;
+					padding: 34px 0 126px;
+				}
+
+				.phone {
+					width: min(76vw, 330px);
+					border-radius: 44px;
+				}
+
+				.phone-screen {
+					border-radius: 32px;
+				}
+
+				.flow-copy {
+					text-align: center;
+				}
+
+				.flow-kicker {
+					justify-content: center;
+				}
+
+				.step-number {
+					width: 64px;
+					height: 64px;
+					margin-right: auto;
+					margin-left: auto;
+					font-size: 24px;
+				}
+
+				.step-title {
+					font-size: clamp(42px, 12vw, 62px);
+				}
+
+				.step-description {
+					font-size: 20px;
+				}
+
+				.step-progress,
+				.loop-note {
+					margin-right: auto;
+					margin-left: auto;
+				}
+
+				.play-download {
+					right: 14px;
+					bottom: 14px;
+				}
+
+				.play-download img {
+					width: 174px;
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				*,
+				*::before,
+				*::after {
+					scroll-behavior: auto !important;
+					transition-duration: 0.01ms !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="header-inner">
+				<a class="brand" href="./" aria-label="Player Quest home">
+					<img class="brand-ball" src="./assets/football-laurel.png" alt="" aria-hidden="true" />
+					<img class="brand-wordmark" src="./assets/playerquest-wordmark.png" alt="Player Quest" />
+				</a>
+				<a class="studio-link" href="../">An AppEdge game</a>
+			</div>
+		</header>
+
+		<main>
+			<section class="flow-section" aria-labelledby="flow-title">
+				<div class="flow-shell">
+					<div class="phone-stage">
+						<div class="phone-glow" aria-hidden="true"></div>
+						<div class="phone">
+							<div class="phone-screen">
+								<video id="flow-video" autoplay muted loop playsinline preload="auto" aria-label="Player Quest gameplay demonstration">
+									<source src="./assets/player-quest-flow.mp4" type="video/mp4" />
+								</video>
+								<div class="level-editorial" id="level-editorial" aria-hidden="true">
+									<span>Level select · Pick your challenge</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="flow-copy" aria-live="polite">
+						<p class="flow-kicker">See how it plays</p>
+						<div class="step-number" id="step-number">01</div>
+						<div class="step-content" id="step-content">
+							<p class="step-label" id="step-label">Highlight 01 / 06</p>
+							<h1 class="step-title" id="flow-title">Choose a level</h1>
+							<p class="step-description" id="step-description">
+								Start from the level map and choose the next football mystery to solve.
+							</p>
+						</div>
+
+						<div class="step-progress" aria-label="Gameplay steps">
+							<button class="progress-step is-active" type="button" data-step="0" aria-label="Choose a level"></button>
+							<button class="progress-step" type="button" data-step="1" aria-label="Pick a hidden card"></button>
+							<button class="progress-step" type="button" data-step="2" aria-label="Ask natural clues"></button>
+							<button class="progress-step" type="button" data-step="3" aria-label="Guess Messi"></button>
+							<button class="progress-step" type="button" data-step="4" aria-label="Reveal and earn rewards"></button>
+							<button class="progress-step" type="button" data-step="5" aria-label="Compete on the leaderboard"></button>
+						</div>
+
+						<p class="loop-note">Built for short sessions, repeat play, collection, and competitive progression.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<a
+			class="play-download"
+			href="https://play.google.com/store/apps/details?id=com.voke.guesstheplayer"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Download Player Quest on Google Play"
+		>
+			<img src="./assets/google-play-badge.png" alt="Get it on Google Play" />
+		</a>
+
+		<script>
+			const playbackRate = 1.58;
+			const steps = [
+				{
+					start: 0,
+					title: "Choose a level",
+					description: "Start from the level map and choose the next football mystery to solve.",
+				},
+				{
+					start: 8,
+					title: "Pick a hidden card",
+					description: "Every unrevealed player card opens a new, fast deduction round.",
+				},
+				{
+					start: 17,
+					title: "Ask natural clues",
+					description: "Ask yes-or-no questions about country, clubs, position, and career history.",
+				},
+				{
+					start: 35,
+					title: "Make the guess",
+					description: "Use the answers you have uncovered to identify the mystery player.",
+				},
+				{
+					start: 43,
+					title: "Reveal and earn",
+					description: "A correct guess reveals the card and rewards progress, coins, and momentum.",
+				},
+				{
+					start: 48,
+					title: "Climb the leaderboard",
+					description: "Turn every solved mystery into global and local competitive progression.",
+				},
+			];
+
+			const video = document.getElementById("flow-video");
+			const levelEditorial = document.getElementById("level-editorial");
+			const stepNumber = document.getElementById("step-number");
+			const stepContent = document.getElementById("step-content");
+			const stepLabel = document.getElementById("step-label");
+			const stepTitle = document.getElementById("flow-title");
+			const stepDescription = document.getElementById("step-description");
+			const progressButtons = Array.from(document.querySelectorAll(".progress-step"));
+			let activeStep = 0;
+			let pendingStep = -1;
+			let transitionTimer;
+			let animationFrame;
+
+			const renderStep = (index, animate = true) => {
+				if (index === pendingStep || (index === activeStep && stepTitle.textContent === steps[index].title)) return;
+
+				const update = () => {
+					activeStep = index;
+					pendingStep = -1;
+					stepNumber.textContent = String(index + 1).padStart(2, "0");
+					stepLabel.textContent = `Highlight ${String(index + 1).padStart(2, "0")} / ${String(steps.length).padStart(2, "0")}`;
+					stepTitle.textContent = steps[index].title;
+					stepDescription.textContent = steps[index].description;
+					progressButtons.forEach((button, buttonIndex) => {
+						button.classList.toggle("is-active", buttonIndex === index);
+						button.setAttribute("aria-current", buttonIndex === index ? "step" : "false");
+					});
+				};
+
+				if (!animate) {
+					window.clearTimeout(transitionTimer);
+					update();
+					stepContent.classList.remove("is-changing");
+					return;
+				}
+
+				pendingStep = index;
+				stepContent.classList.add("is-changing");
+				window.clearTimeout(transitionTimer);
+				transitionTimer = window.setTimeout(() => {
+					update();
+					stepContent.classList.remove("is-changing");
+				}, 145);
+			};
+
+			const syncFlow = () => {
+				const presentationTime = video.currentTime / playbackRate;
+				const nextStep = steps.reduce(
+					(selected, step, index) => (presentationTime >= step.start ? index : selected),
+					0,
+				);
+
+				renderStep(nextStep);
+				levelEditorial.classList.toggle("is-hidden", presentationTime >= 7.35);
+				animationFrame = window.requestAnimationFrame(syncFlow);
+			};
+
+			progressButtons.forEach((button, index) => {
+				button.addEventListener("click", () => {
+					video.currentTime = steps[index].start * playbackRate + 0.04;
+					renderStep(index, false);
+					video.play().catch(() => undefined);
+				});
+			});
+
+			video.addEventListener("loadedmetadata", () => {
+				video.playbackRate = playbackRate;
+				video.play().catch(() => undefined);
+			});
+
+			document.addEventListener("visibilitychange", () => {
+				if (document.hidden) {
+					window.cancelAnimationFrame(animationFrame);
+					return;
+				}
+
+				video.play().catch(() => undefined);
+				syncFlow();
+			});
+
+			renderStep(0, false);
+			syncFlow();
+		</script>
+	</body>
+</html>
