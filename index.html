@@ -466,7 +466,14 @@
                     </div>
                 </div>
 
-                <form class="contact__form grid" id="contact-form">
+                <form class="contact__form grid" id="contact-form"
+                    action="https://formsubmit.co/hello@appedgeng.com" method="POST">
+                    <input type="hidden" name="_subject" value="New AppEdge project inquiry">
+                    <input type="hidden" name="_next" value="https://appedgeng.com/?message=sent#contact">
+                    <input type="hidden" name="_template" value="table">
+                    <input class="contact__honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off"
+                        aria-hidden="true">
+
                     <div class="contact__inputs grid">
                         <label class="contact__field">
                             <span>Name</span>
@@ -493,6 +500,7 @@
                     <button type="submit" class="button button--flex">
                         Send message <i class="uil uil-message button__icon"></i>
                     </button>
+                    <p class="contact__status" id="contact-status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -536,7 +544,7 @@
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20260729"></script>
 </body>
 
 </html>

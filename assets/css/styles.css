@@ -884,6 +884,31 @@ a.contact__method:hover {
   padding: 1.35rem;
 }
 
+.contact__honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.contact__status {
+  min-height: 1.4rem;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+
+.contact__status.is-success {
+  color: var(--accent-color);
+}
+
+.contact__form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
 .contact__inputs {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
