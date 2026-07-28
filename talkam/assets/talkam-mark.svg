@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TalkAm">
+  <rect width="64" height="64" rx="13" fill="#06130d"/>
+  <rect x="8.5" y="8.5" width="47" height="47" rx="9.5" fill="#123928" stroke="#72eeb0" stroke-opacity=".72"/>
+  <rect x="22" y="26" width="4" height="12" rx="2" fill="#72eeb0"/>
+  <rect x="30" y="19" width="4" height="26" rx="2" fill="#72eeb0"/>
+  <rect x="38" y="23" width="4" height="18" rx="2" fill="#72eeb0"/>
+</svg>

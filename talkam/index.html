@@ -3,26 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
-      content="Voice in. English text out. TalkAm is the voice-to-English keyboard made for the way Nigerians actually communicate."
+      content="Voice in. English text out. TalkAm turns Pidgin, Yoruba, Hausa and Igbo speech into clear English wherever you type."
     />
     <meta name="theme-color" content="#07140f" />
     <meta property="og:title" content="TalkAm | Voice in. English text out." />
     <meta
       property="og:description"
-      content="A voice-to-English keyboard for Nigerian Pidgin, built for the messages that matter."
+      content="A voice-to-English keyboard for Pidgin, Yoruba, Hausa and Igbo, built for the messages that matter."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://appedgeng.com/talkam/" />
     <meta property="og:image" content="https://appedgeng.com/talkam/assets/talkam-voice-keyboard-hero.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assets/talkam-voice-keyboard-hero.png" />
+    <link rel="icon" href="assets/talkam-mark.svg" type="image/svg+xml" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260728-2" />
     <title>TalkAm | Voice in. English text out.</title>
   </head>
 
@@ -52,10 +55,11 @@
     <main id="main">
       <section class="hero shell" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <p class="eyebrow"><span aria-hidden="true"></span> Voice-to-English keyboard</p>
+          <p class="eyebrow"><span aria-hidden="true"></span> African voice-to-English keyboard</p>
           <h1 id="hero-title">Voice in.<br /><em>English text out.</em></h1>
           <p class="hero__lede">
-            TalkAm turns the Pidgin you speak into natural English, right inside the apps where your conversations happen.
+            Speak naturally in Pidgin, Yoruba, Hausa or Igbo. TalkAm writes clear English right where your conversations
+            happen.
           </p>
 
           <div class="hero__actions">
@@ -67,62 +71,69 @@
 
           <dl class="hero__proof">
             <div>
-              <dt>Pidgin first</dt>
-              <dd>Built around how you speak</dd>
+              <dt>Four languages</dt>
+              <dd>Pidgin, Yoruba, Hausa and Igbo</dd>
             </div>
             <div>
               <dt>Any text field</dt>
               <dd>WhatsApp, email, notes, and more</dd>
             </div>
             <div>
-              <dt>Tap to talk</dt>
-              <dd>Nothing is recorded in the background</dd>
+              <dt>Private by design</dt>
+              <dd>It listens only after you tap</dd>
             </div>
           </dl>
         </div>
 
-        <div class="hero__media" aria-label="TalkAm voice translation keyboard">
+        <div class="hero__media" aria-label="TalkAm voice translation keyboard" data-parallax>
           <div class="hero__halo" aria-hidden="true"></div>
-          <img
-            src="assets/talkam-voice-keyboard-hero.png"
-            alt="A phone showing a voice waveform, English message preview, and keyboard"
-          />
-          <div class="hero-note hero-note--voice"><i data-lucide="audio-lines" aria-hidden="true"></i> Your voice</div>
-          <div class="hero-note hero-note--clear"><i data-lucide="sparkles" aria-hidden="true"></i> Clear English</div>
+          <div class="hero__device">
+            <img
+              src="assets/talkam-voice-keyboard-hero.png"
+              alt="A phone showing a voice waveform, English message preview, and keyboard"
+              fetchpriority="high"
+            />
+            <div class="hero__scan" aria-hidden="true"></div>
+          </div>
+          <div class="hero-note hero-note--voice"><i data-lucide="audio-lines" aria-hidden="true"></i> Speak naturally</div>
+          <div class="hero-note hero-note--clear"><i data-lucide="sparkles" aria-hidden="true"></i> Write clearly</div>
         </div>
       </section>
 
       <section class="language-band" aria-label="TalkAm language support">
         <div class="shell language-band__inner">
-          <span>Pidgin, made clear</span>
+          <span>Pidgin</span>
           <span class="language-band__rule" aria-hidden="true"></span>
-          <span>Yoruba, Hausa and Igbo next</span>
+          <span>Yoruba</span>
           <span class="language-band__rule" aria-hidden="true"></span>
-          <span>Made for Nigeria</span>
+          <span>Hausa</span>
+          <span class="language-band__rule" aria-hidden="true"></span>
+          <span>Igbo</span>
+          <span class="language-band__aside">One keyboard. Clear English.</span>
         </div>
       </section>
 
       <section class="translation-section section shell" id="how-it-works" aria-labelledby="translation-title">
-        <div class="section-intro">
+        <div class="section-intro" data-reveal>
           <p class="eyebrow eyebrow--dark"><span aria-hidden="true"></span> Hear the difference</p>
           <h2 id="translation-title">From the way you speak to the way you want to be understood.</h2>
         </div>
 
         <div class="translation-grid">
-          <div class="translation-story">
+          <div class="translation-story" data-reveal>
             <p>
               You should not have to rehearse a message in your head before you send it. TalkAm lets you say it your way,
               then helps your words land with the right clarity and tone.
             </p>
             <div class="language-status" aria-label="Language roadmap">
-              <span class="language-status__live"><i data-lucide="check" aria-hidden="true"></i> Pidgin first</span>
-              <span>Yoruba next</span>
-              <span>Hausa next</span>
-              <span>Igbo next</span>
+              <span class="language-status__live"><i data-lucide="check" aria-hidden="true"></i> Pidgin</span>
+              <span><i data-lucide="check" aria-hidden="true"></i> Yoruba</span>
+              <span><i data-lucide="check" aria-hidden="true"></i> Hausa</span>
+              <span><i data-lucide="check" aria-hidden="true"></i> Igbo</span>
             </div>
           </div>
 
-          <div class="translator" data-translator>
+          <div class="translator" data-translator data-reveal>
             <div class="translator__topbar">
               <span class="translator__live"><span></span> Listening only when you tap</span>
               <span>TalkAm keyboard</span>
@@ -155,23 +166,23 @@
 
       <section class="feature-rail" aria-labelledby="feature-title">
         <div class="shell feature-rail__inner">
-          <div class="feature-rail__heading">
+          <div class="feature-rail__heading" data-reveal>
             <p class="eyebrow"><span aria-hidden="true"></span> Built into your flow</p>
             <h2 id="feature-title">No copying. No switching apps. No second-guessing.</h2>
           </div>
 
-          <div class="feature-list">
-            <article>
+          <div class="feature-list" data-reveal-group>
+            <article data-reveal>
               <i data-lucide="message-square-text" aria-hidden="true"></i>
               <h3>Where you already write</h3>
               <p>Use TalkAm in the text fields you use every day, from chats to email drafts.</p>
             </article>
-            <article>
+            <article data-reveal>
               <i data-lucide="mic" aria-hidden="true"></i>
               <h3>Speak. Check. Send.</h3>
               <p>Tap the microphone, speak as you naturally would, then send the English you are happy with.</p>
             </article>
-            <article>
+            <article data-reveal>
               <i data-lucide="wand-sparkles" aria-hidden="true"></i>
               <h3>Natural, not robotic</h3>
               <p>Clear English that still sounds like a real person, whether the message is casual or professional.</p>
@@ -181,13 +192,13 @@
       </section>
 
       <section class="use-cases section shell" id="built-for" aria-labelledby="use-cases-title">
-        <div class="section-intro section-intro--wide">
+        <div class="section-intro section-intro--wide" data-reveal>
           <p class="eyebrow eyebrow--dark"><span aria-hidden="true"></span> Built for real life</p>
           <h2 id="use-cases-title">For the messages that deserve to sound like you meant them.</h2>
         </div>
 
         <div class="use-case-grid">
-          <article class="use-case use-case--lead">
+          <article class="use-case use-case--lead" data-reveal>
             <div class="use-case__index">01</div>
             <div>
               <p class="use-case__label">Work</p>
@@ -196,7 +207,7 @@
             </div>
             <i data-lucide="briefcase-business" aria-hidden="true"></i>
           </article>
-          <article class="use-case">
+          <article class="use-case" data-reveal>
             <div class="use-case__index">02</div>
             <div>
               <p class="use-case__label">Family abroad</p>
@@ -205,7 +216,7 @@
             </div>
             <i data-lucide="plane" aria-hidden="true"></i>
           </article>
-          <article class="use-case">
+          <article class="use-case" data-reveal>
             <div class="use-case__index">03</div>
             <div>
               <p class="use-case__label">Business</p>
@@ -214,7 +225,7 @@
             </div>
             <i data-lucide="store" aria-hidden="true"></i>
           </article>
-          <article class="use-case use-case--quote">
+          <article class="use-case use-case--quote" data-reveal>
             <p>"Your English should never be a barrier between your thoughts and your next opportunity."</p>
             <span>TalkAm principle</span>
           </article>
@@ -222,7 +233,7 @@
       </section>
 
       <section class="privacy-section" id="privacy" aria-labelledby="privacy-title">
-        <div class="shell privacy-section__inner">
+        <div class="shell privacy-section__inner" data-reveal>
           <div class="privacy-section__icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
           <div>
             <p class="eyebrow"><span aria-hidden="true"></span> Privacy, plainly</p>
@@ -238,7 +249,7 @@
         </div>
       </section>
 
-      <section class="closing section shell" aria-labelledby="closing-title">
+      <section class="closing section shell" aria-labelledby="closing-title" data-reveal>
         <div class="closing__line" aria-hidden="true"></div>
         <p class="eyebrow eyebrow--dark"><span aria-hidden="true"></span> Be among the first</p>
         <h2 id="closing-title">The clearest version of your voice is already there.</h2>
@@ -261,6 +272,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js?v=20260728"></script>
   </body>
 </html>
