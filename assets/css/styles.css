@@ -664,6 +664,27 @@ img {
   --media-bg: linear-gradient(135deg, rgba(236, 197, 95, 0.32), rgba(35, 34, 30, 0.82));
 }
 
+.project-card--talkam {
+  --media-bg: linear-gradient(135deg, rgba(64, 224, 172, 0.32), rgba(5, 47, 38, 0.9));
+}
+
+.project-card--clickable {
+  color: inherit;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.project-card--clickable:hover,
+.project-card--clickable:focus-visible {
+  border-color: rgba(64, 224, 172, 0.46);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.34);
+  transform: translateY(-4px);
+}
+
+.project-card--clickable:hover .project-card__link,
+.project-card--clickable:focus-visible .project-card__link {
+  color: #f1d99f;
+}
+
 .project-card--talksay {
   --media-bg: linear-gradient(135deg, rgba(145, 222, 172, 0.34), rgba(15, 41, 42, 0.82));
 }
