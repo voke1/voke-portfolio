@@ -1626,14 +1626,14 @@ p {
   transform: rotateY(-2deg) rotateZ(0deg) translateY(-5px);
 }
 
-.home-product--sabi {
+.home-product--coachapp {
   right: 3.2rem;
   bottom: 3.8rem;
   min-height: 10rem;
   transform: rotateY(4deg) rotateZ(-1deg);
 }
 
-.home-product--sabi:hover {
+.home-product--coachapp:hover {
   transform: rotateY(2deg) rotateZ(0deg) translateY(-5px);
 }
 
@@ -1658,7 +1658,7 @@ p {
   background: rgba(2, 5, 10, 0.38);
 }
 
-.home-product--sabi img {
+.home-product--coachapp img {
   width: 5.5rem;
   height: 5.5rem;
 }
@@ -2028,7 +2028,7 @@ a.contact__method:hover {
     height: 5.4rem;
   }
 
-  .home-product--sabi {
+  .home-product--coachapp {
     right: 1rem;
   }
 }
@@ -2122,12 +2122,12 @@ a.contact__method:hover {
   }
 
   .home-product--playerquest img,
-  .home-product--sabi img {
+  .home-product--coachapp img {
     width: 5rem;
     height: 5rem;
   }
 
-  .home-product--sabi {
+  .home-product--coachapp {
     right: auto;
     bottom: 2rem;
     left: 0;
