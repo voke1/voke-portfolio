@@ -1,3 +1,7 @@
+OWNERDOMAIN=appedgeng.com
+ironsrc.com, 663563, DIRECT
+pangleglobal.com, 5039532, DIRECT
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
 google.com, pub-2508993905691861, DIRECT, f08c47fec0942fa0
 google.com, pub-5805918760749196, DIRECT, f08c47fec0942fa0
 facebook.com, 1869113257108976, DIRECT, c3e20eee3f780d68
