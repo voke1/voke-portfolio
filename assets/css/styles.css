@@ -664,6 +664,27 @@ img {
   --media-bg: linear-gradient(135deg, rgba(236, 197, 95, 0.32), rgba(35, 34, 30, 0.82));
 }
 
+.project-card--talkam {
+  --media-bg: linear-gradient(135deg, rgba(64, 224, 172, 0.32), rgba(5, 47, 38, 0.9));
+}
+
+.project-card--clickable {
+  color: inherit;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.project-card--clickable:hover,
+.project-card--clickable:focus-visible {
+  border-color: rgba(64, 224, 172, 0.46);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.34);
+  transform: translateY(-4px);
+}
+
+.project-card--clickable:hover .project-card__link,
+.project-card--clickable:focus-visible .project-card__link {
+  color: #f1d99f;
+}
+
 .project-card--talksay {
   --media-bg: linear-gradient(135deg, rgba(145, 222, 172, 0.34), rgba(15, 41, 42, 0.82));
 }
@@ -861,6 +882,31 @@ a.contact__method:hover {
 
 .contact__form {
   padding: 1.35rem;
+}
+
+.contact__honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.contact__status {
+  min-height: 1.4rem;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+
+.contact__status.is-success {
+  color: var(--accent-color);
+}
+
+.contact__form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
 }
 
 .contact__inputs {
@@ -1580,14 +1626,14 @@ p {
   transform: rotateY(-2deg) rotateZ(0deg) translateY(-5px);
 }
 
-.home-product--sabi {
+.home-product--coachapp {
   right: 3.2rem;
   bottom: 3.8rem;
   min-height: 10rem;
   transform: rotateY(4deg) rotateZ(-1deg);
 }
 
-.home-product--sabi:hover {
+.home-product--coachapp:hover {
   transform: rotateY(2deg) rotateZ(0deg) translateY(-5px);
 }
 
@@ -1612,7 +1658,7 @@ p {
   background: rgba(2, 5, 10, 0.38);
 }
 
-.home-product--sabi img {
+.home-product--coachapp img {
   width: 5.5rem;
   height: 5.5rem;
 }
@@ -1982,7 +2028,7 @@ a.contact__method:hover {
     height: 5.4rem;
   }
 
-  .home-product--sabi {
+  .home-product--coachapp {
     right: 1rem;
   }
 }
@@ -2076,12 +2122,12 @@ a.contact__method:hover {
   }
 
   .home-product--playerquest img,
-  .home-product--sabi img {
+  .home-product--coachapp img {
     width: 5rem;
     height: 5rem;
   }
 
-  .home-product--sabi {
+  .home-product--coachapp {
     right: auto;
     bottom: 2rem;
     left: 0;

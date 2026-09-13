@@ -5,6 +5,8 @@ const navLinks = document.querySelectorAll(".nav__link");
 const header = document.getElementById("header");
 const scrollUpButton = document.getElementById("scroll-up");
 const contactForm = document.getElementById("contact-form");
+const contactStatus = document.getElementById("contact-status");
+const contactSubmitButton = contactForm?.querySelector('button[type="submit"]');
 const productTrack = document.querySelector(".portfolio__container");
 const revealSelectors = [
   ".home__title",
@@ -226,25 +228,15 @@ function setupProductAutoScroll() {
 
 setupProductAutoScroll();
 
-contactForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
+const submissionStatus = new URLSearchParams(window.location.search).get("message");
 
-  const formData = new FormData(contactForm);
-  const name = String(formData.get("name") || "").trim();
-  const email = String(formData.get("email") || "").trim();
-  const project = String(formData.get("project") || "").trim();
-  const message = String(formData.get("message") || "").trim();
+if (contactStatus && submissionStatus === "sent") {
+  contactStatus.textContent = "Thanks. Your message has been sent.";
+  contactStatus.classList.add("is-success");
+  window.history.replaceState({}, "", `${window.location.pathname}#contact`);
+}
 
-  const subject = `Project inquiry: ${project || "New AppEdge project"}`;
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Project type: ${project}`,
-    "",
-    message,
-  ].join("\n");
-
-  window.location.href = `mailto:hello@appedgeng.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
+contactForm?.addEventListener("submit", () => {
+  contactSubmitButton?.setAttribute("aria-busy", "true");
+  if (contactSubmitButton) contactSubmitButton.disabled = true;
 });
