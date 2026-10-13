@@ -1614,11 +1614,9 @@ p {
 }
 
 .home-product--sabi {
-  top: 3.8rem;
+  top: 7rem;
   right: 0;
-  min-height: 15rem;
-  grid-template-columns: 7.4rem minmax(0, 1fr) auto;
-  padding-top: 3.4rem;
+  min-height: 10rem;
   transform: rotateY(-4deg) rotateZ(1deg);
 }
 
@@ -1628,7 +1626,7 @@ p {
 
 .home-product--coachapp {
   right: 3.2rem;
-  bottom: 3.8rem;
+  bottom: 7rem;
   min-height: 10rem;
   transform: rotateY(4deg) rotateZ(-1deg);
 }
@@ -1658,6 +1656,7 @@ p {
   background: rgba(2, 5, 10, 0.38);
 }
 
+.home-product--sabi img,
 .home-product--coachapp img {
   width: 5.5rem;
   height: 5.5rem;
@@ -2020,16 +2019,12 @@ a.contact__method:hover {
   }
 
   .home-product--sabi {
-    grid-template-columns: 5.8rem minmax(0, 1fr) auto;
-  }
-
-  .home-product--sabi img {
-    width: 5.4rem;
-    height: 5.4rem;
+    top: 5rem;
   }
 
   .home-product--coachapp {
     right: 1rem;
+    bottom: 5rem;
   }
 }
 
@@ -2114,11 +2109,9 @@ a.contact__method:hover {
   }
 
   .home-product--sabi {
-    top: 1rem;
+    top: 4rem;
     right: 0;
-    min-height: 13rem;
-    grid-template-columns: 5.6rem minmax(0, 1fr) auto;
-    padding-top: 3.15rem;
+    min-height: 9rem;
   }
 
   .home-product--sabi img,
@@ -2129,7 +2122,7 @@ a.contact__method:hover {
 
   .home-product--coachapp {
     right: auto;
-    bottom: 2rem;
+    bottom: 4rem;
     left: 0;
     min-height: 9rem;
   }
